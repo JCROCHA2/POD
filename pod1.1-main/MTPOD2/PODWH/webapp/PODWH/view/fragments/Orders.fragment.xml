@@ -1,0 +1,53 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <SelectDialog 
+        items="{pageModel>/orders}" 
+        noDataText="No Orders Found" 
+        title="Select Order" 
+        liveChange=".onOrderLiveChange" 
+        confirm=".onOrderSelect" 
+        cancel=".onDialogClose">
+        <items>
+              <CustomListItem>
+                <HBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Order:"/>
+                        <Text text="{pageModel>order}"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Material:"/>
+                        <Text text="{pageModel>material}"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Quantity:"/>
+                        <Text text="{pageModel>quantity}"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Customer:"/>
+                        <Text text="{pageModel>customer}"/>
+
+                        
+                    </VBox>
+
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Scheduled Start date:"/>
+                        <Text text="{pageModel>scheduledstart}"/>
+
+                        
+                    </VBox>
+                     <VBox class="sapUiSmallMargin">
+                        <Label text="Scheduled End date:"/>
+                        <Text text="{pageModel>scheduledcomplete}"/>
+
+                        
+                    </VBox>
+
+
+
+                </HBox>
+            </CustomListItem>
+        </items>
+    </SelectDialog>
+</core:FragmentDefinition>

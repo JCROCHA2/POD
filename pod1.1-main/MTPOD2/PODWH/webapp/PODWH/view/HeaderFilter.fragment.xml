@@ -1,0 +1,17 @@
+<c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:cc="custom.controls" >
+<OverflowToolbar width="100%">
+<HBox alignItems="Center">
+<layoutData>
+<layout:GridData span="XL6 L6 M12 S12"/>
+</layoutData>
+
+<HBox alignItems="Center">
+<Label text="{i18n>Process Orders}:" class="sapUiMediumMarginBegin sapUiSmallMarginEnd"/>
+<Input showValueHelp="true" id="idOrderInput"  value="{pageModel>/orders/0/order}" change="onOrderChange" width="400px" valueHelpRequest=".openOrdersDialog">
+
+</Input>
+</HBox>
+</HBox>
+
+</OverflowToolbar>
+</c:FragmentDefinition>

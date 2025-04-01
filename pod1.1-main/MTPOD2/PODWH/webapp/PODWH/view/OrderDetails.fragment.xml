@@ -1,0 +1,115 @@
+<mvc:View xmlns:f="sap.f" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:cc="custom.controls" controllerName="mt.custom.plugin.PODWH.PODWH.controller.Orders" displayBlock="true" height="100%" busyIndicatorDelay="0">
+<f:Card id="Order">
+<f:content>
+<VBox width="100%">
+<Bar>
+<contentLeft>
+<Title text="{i18n>Order Details}"/>
+</contentLeft>
+</Bar>
+<HBox class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop">
+      <!-- Customer -->
+       <!-- Order -->
+                    <HBox>
+                        <Label text="Order:"/>
+                        <Text text="{pageModel>/OrderDetails/order}" />
+                    </HBox>
+
+                    <HBox>
+                        <Label text="Customer:"/>
+                        <Text text="{pageModel>/OrderDetails/customer}"/>
+                    </HBox>
+
+                   
+                    <!-- Material -->
+                    <HBox>
+                        <Label text="Material:"/>
+                        <Text text="{pageModel>/OrderDetails/material/material}" /> <Text text="{pageModel>/OrderDetails/material/description}" />
+                    </HBox>
+
+                    <!-- Quantity -->
+                    <HBox>
+                        <Label text="Quantity"/>
+                         <Text text="{pageModel>/OrderDetails/releasedQuantity}"/>
+                    </HBox>
+
+                     <!-- Quantity -->
+                    <HBox>
+                        <Label text="Release By"/>
+                    
+                    </HBox>
+</HBox>
+     <!-- Input Table -->
+                    <Table id="orderTable" 
+                           items="{pageModel>/BOMDetails}" 
+                           inset="false" 
+                           class="sapUiResponsiveMargin"
+                           width="100%">
+
+                        <headerToolbar>
+                            <Toolbar>
+                                <Title text="Component details for Picking" level="H2"/>
+                                <ToolbarSpacer/>
+                            </Toolbar>
+                        </headerToolbar>
+
+                        <columns>
+                            <Column>
+                                <Text text="Material Card"/>
+                            </Column>
+                            <Column>
+                                <Text text="Component type"/>
+                            </Column>
+                           
+                            <Column>
+                                <Text text="Sequence"/>
+                            </Column>
+                              <Column>
+                                <Text text="Quantity"/>
+                            </Column>
+                         
+                            <Column>
+                                <Text text="UOM"/>
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                 
+                                    <Text text="{pageModel>material/material}" />
+                                    <Text text="{pageModel>componentType}"/>
+                                    <Text text="{pageModel>sequence}"/>
+                                    <Text text="{pageModel>quantity}"/>
+                                  
+                                    <Text text="{pageModel>unitOfMeasure}"/>
+                                
+                                  
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+
+                       <!-- Input Fields -->
+
+                           <HBox class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop" justifyContent="SpaceBetween">
+              
+                    <VBox>
+                        <Label text="Substrate Picked"/>
+                        <Input value="{pageModel>/OrderDetails/releasedQuantity}" placeholder="Confirmed Substrate Picked"/>
+                    </VBox>
+
+                
+
+                    <!-- Submit Button -->
+                    <Button text="Finished Picking" type="Emphasized" press="onSubmitOrder" class="sapUiSmallMarginTop"/>
+                    <!-- Print Button -->
+                    <Button text="Print" icon="sap-icon://print" press="onPrint" class="sapUiSmallMarginTop"/>
+
+
+                     </HBox>
+                    
+</VBox>
+</f:content>
+</f:Card>
+</mvc:View>

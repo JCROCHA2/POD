@@ -1,0 +1,15 @@
+{
+	"components": [
+		{
+			"id": "PODWH",
+			"type": "VIEW_PLUGIN",
+			"allowMultipleInstances": false,
+			"name": "mt.custom.plugin.PODWH.PODWH",
+			"propertyEditor": "mt.custom.plugin.PODWH.PODWH.builder.PropertyEditor",
+			"i18n": "mt.custom.plugin.PODWH.PODWH.i18n.i18n",
+            "productionProcessEnabled": true,
+           "productionProcessTitle": "PODWH",
+			"supportedPodTypes": ["WORK_CENTER","OPERATION","ORDER","OTHER"]
+		}   
+	]
+}
