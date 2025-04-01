@@ -1,0 +1,14 @@
+{
+  "welcomeFile": "/PODVI/index.html",
+  "authenticationMethod": "none",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/PODVI/(.*)$",
+      "target": "$1",
+      "localDir": "webapp"
+    }
+  ]
+}

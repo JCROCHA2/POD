@@ -1,0 +1,15 @@
+{
+	"components": [
+		{
+			"id": "PODVI",
+			"type": "VIEW_PLUGIN",
+			"allowMultipleInstances": false,
+			"name": "mt.custom.plugin.PODVI.PODVI",
+			"propertyEditor": "mt.custom.plugin.PODVI.PODVI.builder.PropertyEditor",
+			"i18n": "mt.custom.plugin.PODVI.PODVI.i18n.i18n",
+            "productionProcessEnabled": true,
+           "productionProcessTitle": "PODVI",
+			"supportedPodTypes": ["WORK_CENTER","OPERATION","ORDER","OTHER"]
+		}   
+	]
+}

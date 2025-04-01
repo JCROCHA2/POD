@@ -1,0 +1,26 @@
+<mvc:View xmlns:f="sap.f" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:cc="custom.controls" controllerName="mt.custom.plugin.PODVI.PODVI.controller.Orders" displayBlock="true" height="100%" busyIndicatorDelay="0">
+<f:Card id="OrderID"  height="100%">
+<f:content>
+
+
+<HBox alignItems="Center"  width="100%" height="100%">
+
+<List id="idOrderList" 
+      items="{path: 'pageModel>/sfcs', length: 50}" 
+      mode="SingleSelectMaster" 
+    
+      itemPress=".onOrderPress">
+
+    <items>
+        <ObjectListItem 
+            title="{pageModel>}" 
+            type="Active"/>
+    </items>
+</List>
+</HBox>
+
+
+
+</f:content>
+</f:Card>
+</mvc:View>

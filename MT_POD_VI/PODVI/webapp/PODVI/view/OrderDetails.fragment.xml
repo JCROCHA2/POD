@@ -1,0 +1,101 @@
+<mvc:View xmlns:f="sap.f" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:cc="custom.controls" controllerName="mt.custom.plugin.PODVI.PODVI.controller.Orders" displayBlock="true" height="100%" busyIndicatorDelay="0">
+<f:Card id="Order">
+<f:content>
+<VBox width="100%"  height="100%">
+<Bar>
+<contentLeft>
+<Title text="{i18n>Order Details}"/>
+</contentLeft>
+</Bar>
+<HBox class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop" width="100%" height="100%">
+      <!-- Customer -->
+       <!-- Order -->
+                    <HBox>
+                        <Label text="Order:"/>
+                        <Text text="{pageModel>/OrderDetails/order}" />
+                    </HBox>
+
+                    <HBox>
+                        <Label text="Customer:"/>
+                        <Text text="{pageModel>/OrderDetails/customer}"/>
+                    </HBox>
+
+                   
+                    <!-- Material -->
+                    <HBox>
+                        <Label text="Material:"/>
+                        <Text text="{pageModel>/OrderDetails/material/material}" /> <Text text="{pageModel>/OrderDetails/material/description}" />
+                    </HBox>
+
+                    <!-- Quantity -->
+                    <HBox>
+                        <Label text="Quantity"/>
+                         <Text text="{pageModel>/OrderDetails/releasedQuantity}"/>
+                    </HBox>
+
+                     <!-- Quantity -->
+                    <HBox>
+                        <Label text="Release By"/>
+                    
+                    </HBox>
+</HBox>
+     <!-- Input Table -->
+                 
+
+                       <!-- Input Fields -->
+
+                    <VBox class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop" justifyContent="SpaceBetween">
+                                
+                     <HBox  id="vi" visible="false" class="sapUiSmallMargin">
+                        <!-- Pass/Fail Radio Buttons -->
+                        <Label text="Result:" class="sapUiSmallMargin"/>
+                        <RadioButtonGroup id="idPassFail"  selectedIndex ="{pageModel>/viresult}" select=".onSelectionChange">
+                            <buttons>
+                             <RadioButton text="Fail"   />
+                                <RadioButton text="Pass"  />
+                               
+                            </buttons>
+                        </RadioButtonGroup>
+
+                        <!-- Comment Input -->
+                        <Label text="Comment:" class="sapUiSmallMarginTop"/>
+                        <TextArea id="idComment" value="{pageModel>/vicomment}" placeholder="Enter comment..." rows="3" width="100%"/>
+
+                       
+                    </HBox>
+
+                          <HBox  id="weight" visible="false" class="sapUiSmallMargin">
+                        <!-- Weight Input Field -->
+                        <Label text="Weight (kg):" class="sapUiSmallMargin"/>
+                        <Input id="idWeightInput" type="Number" placeholder="Enter weight..." width="100%"/>
+
+                      
+                    
+                    </HBox>
+
+                          <HBox  id="customer" visible="false" class="sapUiSmallMargin">
+    <!-- Customer ID -->
+                       <Label text="Customer ID:" class="sapUiSmallMargin"/>
+                          <Input id="idCustomerID" type="Number" placeholder="Enter Customer ID..." width="100%"/>
+
+
+                    
+                    </HBox>
+
+                          <HBox  id="cmii" visible="false" class="sapUiSmallMargin">
+    <!-- CMMi -->
+                       <Label text="CMII file upload:" class="sapUiSmallMargin"/>
+                          <Input id="idCMMIFf" type="Number" placeholder="upload the CMMI" width="100%"/>
+
+    <!-- Submit Button -->
+                    
+                    </HBox>
+
+
+                        <Button text="Submit" press=".onSubmitVI" class="sapUiSmallMarginTop"/>
+                     </VBox>
+                    
+</VBox>
+</f:content>
+</f:Card>
+</mvc:View>

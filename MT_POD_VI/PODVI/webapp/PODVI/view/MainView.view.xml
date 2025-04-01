@@ -1,0 +1,35 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="mt.custom.plugin.PODVI.PODVI.controller.MainView" width="100%" height="100%">
+		
+        <Panel 
+                id="panelPlugin"  
+                width="100%"
+                height="100%"
+                expandable="false"
+                expanded="false"
+                accessibleRole="Region"
+                backgroundDesign="Transparent"
+                class="sapUiNoContentPadding">  
+        <headerToolbar>
+            <Toolbar height="3rem">
+           
+                <Title id="headerTitle" text=""/>
+                <ToolbarSpacer/>
+                <core:Fragment fragmentName="mt.custom.plugin.PODVI.PODVI.view.HeaderFilter" type="XML"/>
+            </Toolbar>
+        </headerToolbar>
+        <content> 
+   <HBox>
+    <VBox width="25%" height="100%">
+        <core:Fragment fragmentName="mt.custom.plugin.PODVI.PODVI.view.Substrate"   type="XML"/>
+    </VBox>
+
+    <VBox width="75%" height="100%">
+        <core:Fragment fragmentName="mt.custom.plugin.PODVI.PODVI.view.OrderDetails" type="XML"/>
+    </VBox>
+</HBox>
+          
+        </content>
+	    </Panel>		
+        
+  
+</mvc:View>
