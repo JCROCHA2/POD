@@ -1,0 +1,15 @@
+{
+	"components": [
+		{
+			"id": "PODPP",
+			"type": "VIEW_PLUGIN",
+			"allowMultipleInstances": false,
+			"name": "mt.custom.plugin.PODPP.PODPP",
+			"propertyEditor": "mt.custom.plugin.PODPP.PODPP.builder.PropertyEditor",
+			"i18n": "mt.custom.plugin.PODPP.PODPP.i18n.i18n",
+            "productionProcessEnabled": true,
+           "productionProcessTitle": "PODPP",
+			"supportedPodTypes": ["WORK_CENTER","OPERATION","ORDER","OTHER"]
+		}   
+	]
+}

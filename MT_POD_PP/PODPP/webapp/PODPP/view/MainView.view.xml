@@ -1,0 +1,103 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"  xmlns:html="http://www.w3.org/1999/xhtml"    controllerName="mt.custom.plugin.PODPP.PODPP.controller.MainView" width="100%" height="100%">
+		
+        <Panel 
+                id="panelPlugin"  
+                width="100%"
+                height="100%"
+                expandable="false"
+                expanded="false"
+                accessibleRole="Region"
+                backgroundDesign="Transparent"
+                class="sapUiNoContentPadding">  
+        <headerToolbar>
+            <Toolbar height="3rem">
+              
+                <ToolbarSpacer/>
+                <Button
+                    id="closeButton"
+                    visible="false"
+                    tooltip="{i18n>template.close.tooltip}"
+                    icon="sap-icon://decline"
+                    press="onClosePress"/>
+            </Toolbar>
+        </headerToolbar>
+        <content> 
+              <VBox>
+        <!-- Date Range Filter -->
+        <Title text="Select Date Range"/>
+        <HBox>
+            <DatePicker id="startDatePicker"   change ="onDateChange" placeholder="Start from Date"/>
+            <DatePicker id="endDatePicker"   change="onDateChange" placeholder="Start to Date"/>
+        </HBox>
+
+            <!-- Checkboxes for Small, Intermediate, Large -->
+        <Title text="Select Order Sizes"/>
+         <HBox>
+        <CheckBox id="checkSmall" text="SML" select="onOrderSizeChange"/>
+        <CheckBox id="checkIntermediate" text="INT" select="onOrderSizeChange"/>
+        <CheckBox id="checkLarge" text="JMB" select="onOrderSizeChange"/>
+    </HBox>
+
+        <!-- Orders List with Grouping -->
+        <Title text="Orders List"/>
+        <List id="ordersList" mode="MultiSelect"   items="{/orders}" >
+            <items>
+          
+
+
+                   <CustomListItem>
+                <HBox>
+                <VBox class="sapUiSmallMargin">
+                        <Label text="Size:"/>
+                        <Text text="{size}"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Order:"/>
+                        <Text text="{order}"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Material:"/>
+                        <Text text="{material}"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Quantity:"/>
+                        <Text text="{quantity}"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Customer:"/>
+                        <Text text="{customer}"/>
+
+                        
+                    </VBox>
+
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Scheduled Start date:"/>
+                        <Text text="{scheduledstart}"/>
+
+                        
+                    </VBox>
+                     <VBox class="sapUiSmallMargin">
+                        <Label text="Scheduled End date:"/>
+                        <Text text="{scheduledcomplete}"/>
+
+                        
+                    </VBox>
+                    </HBox>
+                    </CustomListItem>
+            </items>
+        </List>
+
+      
+    
+        <!-- Release Button -->
+        <Button id="releaseButton" text="Release" press="onReleasePress"/>
+    </VBox>
+        </content>
+	    </Panel>		
+        
+  
+</mvc:View>
